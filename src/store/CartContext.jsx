@@ -63,7 +63,7 @@ export function CartContextProvider({ children }) {
     const cartContext = {
         items: cart.items,
         addItem,
-        removeItem
+        removeItem,
     };
 
     return <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>;

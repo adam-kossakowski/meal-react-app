@@ -9,6 +9,10 @@ export default function Header() {
     const cartCtx = useContext(CartContext);
     const userCtx = useContext(UserProgressContext);
 
+    function handleShowCard() {
+        userCtx.showCart();
+    }
+
     const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
         return totalNumberOfItems + item.quantity;
     }, 0);
@@ -20,7 +24,7 @@ export default function Header() {
                 <h1>React Food</h1>
             </div>
             <nav>
-                <Button textOnly>
+                <Button textOnly onClick={handleShowCard}>
                     Cart ({totalCartItems})
                 </Button>
             </nav>
